@@ -24,4 +24,4 @@ The project creates a basic home page that displays a shuffled and unshuffled de
 
 [MIT](./LICENSE.txt)
 
-Copyright (c) 2024 Patrick DOlan
+Copyright (c) 2024 Patrick Dolan
