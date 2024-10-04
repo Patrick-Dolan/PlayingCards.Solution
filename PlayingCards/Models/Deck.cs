@@ -30,13 +30,18 @@ namespace PlayingCards.Models
       }
     }
 
+    // Wikipedia for Fisher Yates algo used to shuffle a finite list: https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+    // Article Dan shared of Fisher Yates algo in C#: https://exceptionnotfound.net/understanding-the-fisher-yates-card-shuffling-algorithm/
     private void ShuffleDeck()
     {
       Random r = new Random();
+      // Count down from the end of the list given
       for (int n = ShuffledCards.Count - 1; n > 0; --n)
       {
+        // Randomly pick an item index that hasn't been shuffled yet
         int k = r.Next(n + 1);
 
+        // Swap the selected Card with the currently evaluated index in the loop 
         Card temp = ShuffledCards[n];
         ShuffledCards[n] = ShuffledCards[k];
         ShuffledCards[k] = temp;
