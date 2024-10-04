@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using PlayingCards.Models;
+using System;
 
 namespace PlayingCards.Controllers
 {
@@ -7,7 +9,8 @@ namespace PlayingCards.Controllers
     [HttpGet("/")]
     public ActionResult Index()
     {
-      return View();
+      Deck newDeck = new Deck();
+      return View(newDeck);
     }
   }
 }

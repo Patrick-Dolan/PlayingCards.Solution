@@ -1,3 +1,5 @@
+@using PlayingCards.Models
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +7,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Playing Cards</title>
 </head>
-<body>
+<body style="font-family: sans-serif;">
   <h1>Playing cards</h1>
+  <div style="display:flex;margin-right:1rem;">
+    <div>
+      <h2>Unshuffled</h2>
+      <ol>
+        @foreach (Card card in @Model.Cards)
+        {
+          <li>@card.Value of @card.Suit</li>
+        }
+      </ol>
+    </div>
+    <div>
+      <h2>Shuffled</h2>
+      <ol>
+        @foreach (Card card in @Model.ShuffledCards)
+        {
+          <li>@card.Value of @card.Suit</li>
+        }
+      </ol>
+    </div>
+  </div>
 </body>
 </html>
